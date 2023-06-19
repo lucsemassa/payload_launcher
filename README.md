@@ -35,7 +35,9 @@ The lastest version (2.7.3) at today date can be downloaded here https://repo1.m
 ![Jython installation](images/jython.png)
 
 3. Download the burp_bug_notifer.py from this repository and include it the extensions list of BurpSuite. Make sure the plugin is successfully loaded. 
-`git clone https://github.com/lucsemassa/burp_bug_notifier.git`
+```
+git clone https://github.com/lucsemassa/burp_bug_notifier.git
+```
 ![Import BurpErrorNotifier extenstion installation](images/import_plugin.png)
 
 ![Import BurpErrorNotifier extenstion installation](images/plugin_loaded.png)
@@ -47,30 +49,45 @@ The lastest version (2.7.3) at today date can be downloaded here https://repo1.m
 ![Adding target to scope](images/scope.png)
 
 ### Print the help menu
-`python3 payload_launcher.py -h`
+```
+python3 payload_launcher.py -h
+```
 
 ### Scrap and send payloads to all get and post forms 
-`python3 payload_launcher.py -l http://192.168.90.131/DVWA2/`
+```
+python3 payload_launcher.py -l http://192.168.90.131/DVWA2/
+```
 
 ### Scrap and send payloads to all get and post forms in an authenticated way (cookie needed)
 The cookie can be copied from BurpSuite. You can use **Copy As Python-Requests** plugin of BurpSuite to copy the cookies in the json format.
-`python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}'`
+```
+python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}'
+```
 
 ### Add custom headers
-`python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}' `
+```
+python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}' 
+```
 
 
 ### Scrap and send payloads to all links excluding one, two or more links 
 The excluded links should be added in regex format separated with spaces. For example here, we will be excluding logout.php setup.php and everything available at /vulnerabilities/upload/  
-`python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}'  -e logout\.php setup\.php \/vulnerabilities\/upload\/ `
+```
+python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}'  -e logout\.php setup\.php \/vulnerabilities\/upload\/ 
+```
 
 ### Scrap and send payloads to specific 
 The same concept of regex applies here.
 As for example, we will scan only /vulnerabilities/sqli/  vulnerabilities/open_redirect/ and vulnerabilities/fi/?page=include.php
-`python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}'  -i \/vulnerabilities\/sqli\/ -i \/vulnerabilities\/open_redirect\/ page=include\.php` 
+```
+python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}'  -i \/vulnerabilities\/sqli\/ -i \/vulnerabilities\/open_redirect\/ page=include\.php
+```
 
 ### Scrap and send payloads to all get and post forms of /vulnerabilities/* excepting /vulnerabilities/captcha/ and /vulnerabilities/javascript/
-`python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}'  -i \/vulnerabilities\/[a-zA-Z_ -]+\/ -e \/vulnerabilities\/captcha\/ \/vulnerabilities\/javascript\/`
+
+```
+python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"5rqbtmsf1phcc83mkgio8kvjb9", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "Connection": "close", "Upgrade-Insecure-Requests": "1"}'  -i \/vulnerabilities\/[a-zA-Z_ -]+\/ -e \/vulnerabilities\/captcha\/ \/vulnerabilities\/javascript\/
+```
 
 
 ## Use case
@@ -78,13 +95,18 @@ We will be scanning DVWA in **authenticated mode**.
 We will need cookie and we will be excluding logout.php (to prevent logging out) and security.php (to keep dvwa security to low for the poc).
 These two pages will be added in regex format separated with space.
 
-`python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"memh0v2c71pp0d60dsh8bkhl7f", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"}'  -e logout\.php security\.php`
+```
+python3 payload_launcher.py -l http://192.168.90.131/DVWA2/ -c '{"PHPSESSID":"memh0v2c71pp0d60dsh8bkhl7f", "security": "low"}' -H '{"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"}'  -e logout\.php security\.php
+```
 ![BurpErrorNotifier](images/payload_launcher.png)
 
 The result of the scan is given in a tab named BurpErrorNotifier.
 ![BurpErrorNotifier Tab](images/burp_error_notifier_tab.png)
 
 For BurpPro user, the vulnerabilities are also presented in the dashboard filtered by severity.
+
 ![Dashboard of issues](images/dasboard.png)
+- Dashboard of High severity issues
 ![Dashboard of High issues](images/severity_high.png)
+- Dashboard of Medium severity issues
 ![Dashboard of Medium issues](images/severity_medium.png)
