@@ -105,7 +105,7 @@ The result of the scan is given in a tab named BurpErrorNotifier.
 
 For BurpPro user, the vulnerabilities are also presented in the dashboard filtered by severity.
 
-![Dashboard of issues](images/dasboard.png)
+![Dashboard of issues](images/dashboard.png)
 - Dashboard of High severity issues
 ![Dashboard of High issues](images/severity_high.png)
 - Dashboard of Medium severity issues
