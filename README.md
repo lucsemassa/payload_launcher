@@ -1,4 +1,4 @@
-# payload_launcher
+# payload_launcher && burp_bug_notifier
 
 In 2022, I released [burp_bug_finder](https://github.com/lucsemassa/burp_bug_finder), a custom BurpSuite plugin (written in python) that simplifies the discovery of some web vulnerabilities. After installing, the process involved including the tested url in the scope, browsing the website and filling out forms manually. During testing, I realized I could potentially miss some vulnerabilities certain pages or by not accessing certain pages or by overlooking hidden forms in the user view.
 
@@ -36,7 +36,7 @@ The lastest version (2.7.3) at today date can be downloaded here https://repo1.m
 
 3. Download the burp_bug_notifer.py from this repository and include it the extensions list of BurpSuite. Make sure the plugin is successfully loaded. 
 ```
-git clone https://github.com/lucsemassa/burp_bug_notifier.git
+git clone https://github.com/lucsemassa/payload_launcher.git
 ```
 ![Import BurpErrorNotifier extenstion installation](images/import_plugin.png)
 
