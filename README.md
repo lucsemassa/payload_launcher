@@ -1,6 +1,6 @@
 # payload_launcher
 
-In 2022, I released [burp_bug_finder](https://github.com/lucsemassa/burp_bug_finder) a custom BurpSuite plugin (written in python) that simplifies the discovery of some web vulnerabilities. After installing, the process involved including the tested url in the scope, browsing the website and filling out forms manually. During testing, I realized I could potentially miss some vulnerabilities certain pages or by not accessing certain pages or by overlooking hidden forms in the user view.
+In 2022, I released [burp_bug_finder](https://github.com/lucsemassa/burp_bug_finder), a custom BurpSuite plugin (written in python) that simplifies the discovery of some web vulnerabilities. After installing, the process involved including the tested url in the scope, browsing the website and filling out forms manually. During testing, I realized I could potentially miss some vulnerabilities certain pages or by not accessing certain pages or by overlooking hidden forms in the user view.
 
 The current project aims to automate the entire process. The tool browses through every link and sends payloads in every encountered form. It consists of two modules:
 - **the payload launcher**: to automate the payload sending process
