@@ -17,8 +17,8 @@ Here are the features covered by the tool :
 - [x] Fill password, email, url, date, time, number, checkbox, tel, submit, text, hidden, textarea, trix-editor fields
 - [x] Detect XSS vulnerability
 - [x] Detect Error based SQLi vulnerability
-- [x] Detect Local File Injection vulnerability (LFI)
-- [x] Detect Open Reddirect vulnerability
+- [x] Detect Local File Inclusion vulnerability (LFI)
+- [x] Detect Open Redirect vulnerability
 - [x] Detect improper redirection
 - [x] Detect improper error handling such as exception, database error, warning message  
 - [x] Scan only given path(s) specified by regex
